@@ -1,0 +1,34 @@
+.home-container {
+  text-align: center;
+  margin-top: 60px;
+}
+
+h1 {
+  font-size: 32px;
+  margin-bottom: 20px;
+}
+
+p {
+  font-size: 18px;
+  color: #555;
+  max-width: 600px;
+  margin: auto;
+}
+
+.actions {
+  margin-top: 30px;
+}
+
+.btn-primary {
+  background-color: #4CAF50;
+  color: white;
+  padding: 12px 25px;
+  border: none;
+  border-radius: 8px;
+  cursor: pointer;
+  font-size: 16px;
+}
+
+.btn-primary:hover {
+  background-color: #45a049;
+}

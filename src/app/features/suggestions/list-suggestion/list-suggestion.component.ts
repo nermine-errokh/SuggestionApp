@@ -1,5 +1,6 @@
 import { Component } from '@angular/core';
-import { Suggestion } from '../../models/suggestion';
+import { Suggestion } from '../../../models/suggestion';
+import { ActivatedRoute } from '@angular/router';
 
 @Component({
   selector: 'app-list-suggestion',
@@ -9,6 +10,7 @@ import { Suggestion } from '../../models/suggestion';
 export class ListSuggestionComponent {
 favorites: Suggestion[] = [];
 searchText: string = '';
+
 
 
 

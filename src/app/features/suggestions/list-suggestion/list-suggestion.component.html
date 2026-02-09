@@ -22,6 +22,9 @@
     <div class="actions" *ngIf="s.status !== 'refusee'">
       <button class="like" (click)="likeSuggestion(s)">Like</button>
       <button class="fav" (click)="addToFavorites(s)">Favoris</button>
+     <button [routerLink]="[s.id]">
+    Details
+  </button>
     </div>
 
     <div class="status refusee" *ngIf="s.status === 'refusee'">
