@@ -1,0 +1,66 @@
+<div class="form-container">
+
+  <form [formGroup]="suggestionForm" (ngSubmit)="onSubmit()">
+
+    <h2>➕ Ajouter une suggestion</h2>
+
+    <!-- TITLE -->
+    <div class="form-group">
+      <label>Titre</label>
+      <input type="text" formControlName="title" />
+      <div class="error"
+        *ngIf="suggestionForm.get('title')?.invalid && suggestionForm.get('title')?.touched">
+        <small *ngIf="suggestionForm.get('title')?.errors?.['required']">
+          Le titre est obligatoire
+        </small>
+        <small *ngIf="suggestionForm.get('title')?.errors?.['minlength']">
+          Minimum 5 caractères
+        </small>
+        <small *ngIf="suggestionForm.get('title')?.errors?.['pattern']">
+          Doit commencer par majuscule et contenir seulement des lettres
+        </small>
+      </div>
+    </div>
+
+    <!-- DESCRIPTION -->
+    <div class="form-group">
+      <label>Description</label>
+      <textarea formControlName="description"></textarea>
+      <div class="error"
+        *ngIf="suggestionForm.get('description')?.invalid && suggestionForm.get('description')?.touched">
+        <small>Description minimum 30 caractères</small>
+      </div>
+    </div>
+
+    <!-- CATEGORY -->
+    <div class="form-group">
+      <label>Catégorie</label>
+      <select formControlName="category">
+        <option value="">-- Choisir --</option>
+        <option *ngFor="let c of categories" [value]="c">{{ c }}</option>
+      </select>
+      <div class="error"
+        *ngIf="suggestionForm.get('category')?.invalid && suggestionForm.get('category')?.touched">
+        <small>Catégorie obligatoire</small>
+      </div>
+    </div>
+
+    <!-- DATE -->
+    <div class="form-group">
+      <label>Date</label>
+      <input type="text" formControlName="date" readonly />
+    </div>
+
+    <!-- STATUS -->
+    <div class="form-group">
+      <label>Status</label>
+      <input type="text" formControlName="status" readonly />
+    </div>
+
+    <button type="submit" [disabled]="suggestionForm.invalid">
+      Soumettre
+    </button>
+
+  </form>
+
+</div>
