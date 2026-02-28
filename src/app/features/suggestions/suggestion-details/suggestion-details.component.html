@@ -5,6 +5,7 @@
   <p><strong>Description :</strong> {{ suggestion.description }}</p>
   <p><strong>Catégorie :</strong> {{ suggestion.category }}</p>
   <p><strong>Likes :</strong> {{ suggestion.nbLikes }}</p>
+  <button [routerLink]="['/suggestions/edit', suggestion.id]">update</button>
 
   <br>
 
